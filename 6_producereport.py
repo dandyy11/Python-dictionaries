@@ -4,6 +4,7 @@ since it was manually entered. Print out the details of any produce that has in 
 as well as the calculated total that shows the discrepancy.
 '''
 
+
 ProduceDictionary={
     'Potatoes': {
         'cost': 0.86,
@@ -207,3 +208,12 @@ ProduceDictionary={
     }
 }
 
+for produce, details in ProduceDictionary.items():
+    calc_total = round(details['cost'] * details['amt_sold'],2)
+    stated_total = details['total']
+
+    if calc_total != stated_total:
+        print(f"Produce Name: {produce}")
+        print(f"Calculated Total: ${calc_total}")
+        print(f"Stated Total: ${stated_total}")
+        print
